@@ -1,0 +1,55 @@
+﻿
+    
+<div class="row">
+    <div class="col-md-12">
+        <div style="height:5em"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <div style="height:5em"></div>
+    </div>
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="text" id="cityname" class="form-control" placeholder="Enter location" ng-model="location" />
+            <span class="input-group-btn">
+                <button ng-click="getEvents()" class="btn btn-primary">Search</button>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div style="height:5em"></div>
+    </div>
+    
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="table-striped">
+            <table class="table-hover" ng-show="events">
+                <caption><h2>Know The Talk Around {{name}}!!</h2></caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Venue</th>
+                        <th>Location</th>
+                        <th>Time</th>
+                        <th>Photo</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="event in events">
+                        <td>{{event.title}}</td>
+                        <td>{{event.venue_name}}</td>
+                        <td>{{event.venue_address}}</td>
+                        <td>{{event.start_time}}</td>
+                        <td><img class="poster" ng-src="{{event.image.medium.url}}" width="128" height="128" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    
+
