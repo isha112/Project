@@ -24,7 +24,7 @@
 </div>
 
 <div class="container">
-    <div class="row">
+    <!--<div class="row">
         <div class="table-striped">
             <table class="table-hover" ng-show="events">
                 <caption><h2>Know The Talk Around {{name}}!!</h2></caption>
@@ -44,12 +44,25 @@
                         <td>{{event.venue_name}}</td>
                         <td>{{event.venue_address}}</td>
                         <td>{{event.start_time}}</td>
-                        <td><img class="poster" ng-src="{{event.image.medium.url}}" width="128" height="128" /></td>
+                        <td><img class="poster" ng-src="{{event.image.large.url}}" width="128" height="128" /></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-    </div>
+    </div>-->
+    <h2 ng-show="events">Know The Talk Around {{name}}!!</h2>
+    <section id="demo" ng-show="events">
+        
+        <article ng-repeat="event in events" class="white-panel">
+            <img ng-src="{{event.image.medium.url}}" alt="Event" />
+            <h3>{{event.title}}</h3>
+            <p>
+                <label>{{event.venue_name}}</label>
+                <label>{{event.venue_address}}</label>
+                <label>{{event.start_time}}</label>
+            </p>
+        </article>
+    </section>
 </div>
     
 
